@@ -5,7 +5,7 @@ products:
     model: Cat Litter Box M4
 entities:
   - entity: button
-    name: Reset
+    name: Reset Clean Cycle
     icon: "mdi:refresh"
     dps:
       - id: 1
@@ -24,7 +24,7 @@ entities:
           - dps_val: "manual_clean"
             value: "Manual"
   - entity: button
-    name: Empty
+    name: Empty Litter
     icon: "mdi:delete-empty"
     dps:
       - id: 3
@@ -51,7 +51,7 @@ entities:
           min: 1
           max: 60
   - entity: sensor
-    name: Cat weight
+    name: Last Cat Weight
     icon: "mdi:cat"
     class: weight
     dps:
@@ -59,6 +59,7 @@ entities:
         type: integer
         name: sensor
         class: measurement
+        unit: lb
         mapping:
           - scale: 10
   - entity: sensor
@@ -124,7 +125,7 @@ entities:
           - dps_val: "white"
             value: "White"
   - entity: sensor
-    name: Clean count
+    name: Cleaning Count Since Last Empty
     icon: "mdi:counter"
     dps:
       - id: 103
@@ -141,7 +142,7 @@ entities:
         mapping:
           - scale: 10
   - entity: sensor
-    name: Status detail
+    name: Safety Sensor Status
     icon: "mdi:information"
     category: diagnostic
     dps:
@@ -162,7 +163,7 @@ entities:
           - dps_val: "5"
             value: "Sensor 5 triggered"
   - entity: number
-    name: Backlight brightness
+    name: Button Backlight brightness
     icon: "mdi:brightness-6"
     category: config
     dps:
@@ -191,6 +192,7 @@ entities:
       - id: 108
         type: string
         name: sensor
+        class: enum
         mapping:
           - dps_val: "0"
             value: "Notification 0"
@@ -213,18 +215,19 @@ entities:
           - dps_val: "9"
             value: "Notification 9"
   - entity: sensor
-    name: Trigger mode
+    name: Last Clean Trigger
     icon: "mdi:gesture-tap"
     category: diagnostic
     dps:
       - id: 109
         type: string
         name: sensor
+        class: enum
         mapping:
           - dps_val: "Default"
             value: "Default"
           - dps_val: "Key"
-            value: "Key"
+            value: "Button"
           - dps_val: "App"
             value: "App"
           - dps_val: "Auto"
@@ -238,11 +241,12 @@ entities:
       - id: 110
         type: string
         name: sensor
+        class: enum
         mapping:
           - dps_val: "Standby"
             value: "Standby"
           - dps_val: "Wait_Cluster"
-            value: "Waiting"
+            value: "Waiting for Clumping"
           - dps_val: "Clean_Pause"
             value: "Clean paused"
           - dps_val: "Clean_Start"

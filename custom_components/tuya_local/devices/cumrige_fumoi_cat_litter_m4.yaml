@@ -144,12 +144,11 @@ entities:
   - entity: sensor
     name: Safety Sensor Status
     icon: "mdi:information"
-    category: diagnostic
+    class: enum
     dps:
       - id: 105
         type: string
         name: sensor
-        class: enum
         mapping:
           - dps_val: "0"
             value: "Normal"
@@ -189,11 +188,11 @@ entities:
     name: Notification log
     icon: "mdi:message-text"
     category: diagnostic
+    class: enum
     dps:
       - id: 108
         type: string
         name: sensor
-        class: enum
         mapping:
           - dps_val: "0"
             value: "Notification 0"
@@ -218,12 +217,11 @@ entities:
   - entity: sensor
     name: Last Clean Trigger
     icon: "mdi:gesture-tap"
-    category: diagnostic
+    class: enum
     dps:
       - id: 109
         type: string
         name: sensor
-        class: enum
         mapping:
           - dps_val: "Default"
             value: "Default"
@@ -237,13 +235,12 @@ entities:
             value: "App pause"
   - entity: sensor
     name: Status
+    class: enum
     icon: "mdi:toilet"
-    category: diagnostic
     dps:
       - id: 110
         type: string
         name: sensor
-        class: enum
         mapping:
           - dps_val: "Standby"
             value: "Standby"

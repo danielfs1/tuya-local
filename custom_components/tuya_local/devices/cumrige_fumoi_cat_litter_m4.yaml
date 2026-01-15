@@ -1,6 +1,8 @@
 name: Litter box
 products:
-  - id: e1kqqhok
+  - id: wr9jct0c8aavcymm
+    manufacturer: Fumoi / Cumrige
+    model: Cat Litter Box M4
 entities:
   - entity: button
     name: Reset

@@ -149,6 +149,7 @@ entities:
       - id: 105
         type: string
         name: sensor
+        class: enum
         mapping:
           - dps_val: "0"
             value: "Normal"
@@ -235,8 +236,9 @@ entities:
           - dps_val: "App_pause"
             value: "App pause"
   - entity: sensor
-    translation_key: status
+    name: Status
     icon: "mdi:toilet"
+    category: diagnostic
     dps:
       - id: 110
         type: string
